@@ -1,0 +1,46 @@
+$light-text: #f3ebeb;
+$dark-text:#979a9f;
+$posts-light-bg: #484c55;
+$bp-mobile: 320px;
+$bp-tablet: 768px;
+$bp-base: 1000px;
+$bp-desktop: 1280px;
+
+.wrapper {
+  max-width: 1600px;
+  margin: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 1fr;
+  max-width: 1600px;
+  height: 900px;
+
+  @media (min-width: $bp-tablet) {
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas: 
+    "n h"
+    "n c";
+  }
+
+  @media (min-width: $bp-base) {
+
+  }
+  @media (min-width: $bp-desktop) {
+  }
+
+}
+
+a {
+  text-decoration: none;
+  color: $light-text;
+}
+
+@import './components/Profile/profile.scss';
+@import './components/Profile/Posts/posts.scss';
+@import './components/Navbar/navbar.scss';
+@import './components/Header/header.scss';
+@import './components/Content/content.scss';
+@import './components/Dialogs/dialogs.scss';

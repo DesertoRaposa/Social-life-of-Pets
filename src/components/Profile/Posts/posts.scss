@@ -1,0 +1,137 @@
+.posts {
+  background-color: #3C424B;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+
+  @media (min-width: $bp-tablet) {
+    justify-items: unset;
+    grid-area: po;
+    margin-top: 0;
+    border-radius: 10px;
+    max-width: 840px;
+    width: 100%;
+  }
+
+
+  input {
+    padding: 15px;
+    width: 360px;
+    height: 44px;
+    border-radius: 15px;
+    border-style: none;
+    background: rgba(241, 240, 240, 0.966);
+    outline:none;
+    margin: 20px; 
+
+    @media (min-width: $bp-tablet) {
+      width: 550px;
+      height: 64px;
+      padding: 20px;
+    }
+
+    @media (min-width: $bp-base) {
+    }
+    @media (min-width: $bp-desktop) {
+    }
+
+
+  }
+
+  &__button {
+    margin: 20px;
+    border-radius: 40px;
+    outline: none;
+    padding: 15px 50px;
+    cursor: pointer;
+    background: #2BA7F3;
+    border-style: none;
+    max-width: 150px;
+    color: white;
+    font-size: 16px;
+    box-shadow: rgb(0 0 0 / 8%) 0px 8px 28px;
+
+    &:hover {
+      transition-duration: 0.2s;
+      background-color: rgba(26, 140, 216);
+    }
+  }
+
+  &__wrapper {
+    max-width: 390px;
+    width: 100%;
+    display: grid;
+    grid-row-gap: 20px;
+    padding: 20px;
+
+    @media (min-width: $bp-tablet) {
+      max-width: 550px;
+    }
+
+    @media (min-width: $bp-base) {
+    }
+    @media (min-width: $bp-desktop) {
+    }
+
+
+
+  }
+
+  &__title {
+    color: $light-text;
+    margin: 0;
+    padding: 20px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.486);
+    text-align: center;
+    width: 100%;
+
+    @media (min-width: $bp-tablet) {
+      text-align: unset;
+      width: auto;
+    }
+
+  }
+
+  &__item {
+    column-gap: 20px;
+    background: $posts-light-bg;
+    padding: 20px;
+    display: grid;
+    grid-template-columns:  40px 1fr 45px;;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  &__img {
+
+
+    img {
+      width: 50px;
+      border-radius: 50px;
+    }
+
+  }
+
+  &__text {
+    padding-left: 20px;
+    color: $light-text;
+  }
+
+  &__like {
+    display: flex;
+    justify-content: space-around;
+    grid-column-end: 4;
+    align-items: end;
+
+    img {
+      width: 20px;
+    }
+
+    span {
+      color: $light-text;
+    }
+  }
+}
