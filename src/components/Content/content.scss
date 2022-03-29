@@ -1,6 +1,5 @@
 .content {
-
-  background: #262D37;
+  background: $background-dark;
 
   @media (min-width: $bp-tablet) {
     grid-area: c;

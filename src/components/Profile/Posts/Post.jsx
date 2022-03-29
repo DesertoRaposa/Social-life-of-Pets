@@ -2,7 +2,7 @@ import React from 'react';
 import m from '../../../img/m.jpg';
 import like from '../../../img/like.png';
 
-const Post = (props) => {
+const Post = ({message,likesCount}) => {
   return (
     <div className="posts__wrapper">
       <div className="posts__item">
@@ -24,7 +24,7 @@ const Post = (props) => {
           </picture>
         </div>
         <p className="posts__text">
-          {props.message}
+          {message}
         </p>
         <div className="posts__like">
           <img
@@ -32,9 +32,8 @@ const Post = (props) => {
             alt="avatar"
             aria-label="avatar"
           />
-          <span>5</span>
+          <span>{likesCount}</span>
         </div>
-
       </div>
     </div>
   )

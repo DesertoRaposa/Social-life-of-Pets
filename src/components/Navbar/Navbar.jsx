@@ -20,7 +20,7 @@ const Navbar = () => {
             src={home}
             alt="logo"
           />
-          <NavLink to="/profile" activeClassName="active">
+          <NavLink to="/profile" activeclassname="active">
             Profile
           </NavLink>
         </div>
@@ -29,7 +29,7 @@ const Navbar = () => {
             src={home}
             alt="logo"
           />
-          <NavLink to="/dialogs" activeClassName="active">
+          <NavLink to="/dialogs" activeclassname="active">
             Messages
           </NavLink>
         </div>
