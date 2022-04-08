@@ -4,9 +4,8 @@ import m from '../../../img/m.jpg';
 const Message = ({ message }) => {
   return (
     <>
-      <div className="message">
-        <div className="posts__item">
-          <div className="posts__img">
+        <div className="dialogs__item">
+          <div className="dialogs__img">
             <picture>
               <source
                 srcSet={m}
@@ -23,11 +22,10 @@ const Message = ({ message }) => {
               />
             </picture>
           </div>
-          <p className="posts__text">
+          <p className="dialogs__text">
             {message}
           </p>
         </div>
-      </div>
     </>
   );
 }

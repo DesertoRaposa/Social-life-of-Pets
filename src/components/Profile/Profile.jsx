@@ -2,14 +2,15 @@ import React from 'react';
 import Posts from './Posts/Posts';
 import ProfileInfo from './ProfileInfo';
 
-const Profile = ({ profiles }) => {
+const Profile = ({ profilePage, addPost, updateNewPostText }) => {
+
   return (
     <>
       <div className='content'>
         <div className='content__image' />
         <div className="content__wrapper">
           <div className="profile">
-            {profiles.map((data) =>
+            {profilePage.profileData.map((data) =>
               <ProfileInfo
                 name={data.name}
                 breed={data.breed}
@@ -22,7 +23,12 @@ const Profile = ({ profiles }) => {
             )
             }
           </div>
-          <Posts />
+          <Posts
+            profilePage={profilePage}
+            addPost={addPost}
+            newPostText={profilePage.newPostText}
+            updateNewPostText={updateNewPostText}
+          />
         </div>
       </div>
     </>

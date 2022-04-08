@@ -6,18 +6,21 @@ import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
 
-
-const App = ({ dialogs, messages, profiles }) => {
+const App = ({ state, addPost, updateNewPostText }) => {
   return (
-
-      <section className='wrapper'>
-        <div className='container'>
-          <Header />
-          <Navbar />
-          <Content profiles={profiles} dialogs={dialogs} messages={messages}  />
-          {/* <Footer /> */}
-        </div>
-      </section>
+    <section className='wrapper'>
+      <div className='container'>
+        <Header />
+        <Navbar />
+        <Content
+          profilePage={state.profilePage}
+          dialogsPage={state.dialogsPage}
+          addPost={addPost}
+          updateNewPostText={updateNewPostText}
+        />
+        {/* <Footer /> */}
+      </div>
+    </section>
   )
 }
 

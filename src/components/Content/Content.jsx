@@ -6,18 +6,26 @@ import {
 } from "react-router-dom";
 import Dialogs from '../Dialogs/Dialogs';
 
-const Content = ({ profiles, dialogs, messages }) => {
+const Content = ({ profilePage, dialogsPage, addPost, updateNewPostText }) => {
   return (
     <Routes>
       <Route
+        path="/"
+      />
+      <Route
         path="/profile"
-        element={<Profile profiles={profiles} />}
+        element={
+          <Profile
+            profilePage={profilePage}
+            addPost={addPost}
+            newPostText={profilePage.newPostText}
+            updateNewPostText={updateNewPostText}
+          />}
       />
       <Route
         exact path="/dialogs/*"
         element={<Dialogs
-          dialogs={dialogs}
-          messages={messages}
+          dialogsPage={dialogsPage}
         />
         }
       />
