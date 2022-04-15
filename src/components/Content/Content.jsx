@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Dialogs from '../Dialogs/Dialogs';
 
-const Content = ({ profilePage, dialogsPage, addPost, updateNewPostText }) => {
+const Content = ({ profilePage, dialogsPage, dispatch }) => {
   return (
     <Routes>
       <Route
@@ -17,15 +17,15 @@ const Content = ({ profilePage, dialogsPage, addPost, updateNewPostText }) => {
         element={
           <Profile
             profilePage={profilePage}
-            addPost={addPost}
+            dispatch={dispatch}
             newPostText={profilePage.newPostText}
-            updateNewPostText={updateNewPostText}
           />}
       />
       <Route
         exact path="/dialogs/*"
         element={<Dialogs
           dialogsPage={dialogsPage}
+          dispatch={dispatch}
         />
         }
       />

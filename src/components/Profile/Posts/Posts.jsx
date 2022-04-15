@@ -1,17 +1,22 @@
 import React from 'react';
 import Post from './Post';
+import {
+  updateNewPostTextCreator,
+  addPostCreator
+} from '../../../redux/profile-reducer';
 
-const Posts = ({ profilePage, addPost, updateNewPostText }) => {
+const Posts = ({ profilePage, dispatch }) => {
 
   let newPostElement = React.createRef();
 
   let addNewPost = () => {
-    addPost();
+    dispatch(addPostCreator());
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    updateNewPostText(text);
+    let action = updateNewPostTextCreator(text);
+    dispatch(action);
   }
 
   return (
@@ -33,8 +38,8 @@ const Posts = ({ profilePage, addPost, updateNewPostText }) => {
             className="posts__input"
             onChange={onPostChange}
             value={profilePage.newPostText}
-            ref={newPostElement} 
-            />
+            ref={newPostElement}
+          />
         </form>
       </div>
       <button

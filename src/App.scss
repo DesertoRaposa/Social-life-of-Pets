@@ -39,6 +39,28 @@ a {
   color: $light-text;
 }
 
+ textarea {
+  padding: 15px;
+  width: 360px;
+  height: 44px;
+  border-radius: 15px;
+  border-style: none;
+  background: rgba(241, 240, 240, 0.966);
+  outline:none;
+  margin: 20px; 
+
+  @media (min-width: $bp-tablet) {
+    width: 550px;
+    height: 64px;
+    padding: 20px;
+  }
+
+  @media (min-width: $bp-base) {
+  }
+  @media (min-width: $bp-desktop) {
+  }
+}
+
 @import './components/Profile/profile.scss';
 @import './components/Profile/Posts/posts.scss';
 @import './components/Navbar/navbar.scss';

@@ -2,7 +2,7 @@ import React from 'react';
 import Posts from './Posts/Posts';
 import ProfileInfo from './ProfileInfo';
 
-const Profile = ({ profilePage, addPost, updateNewPostText }) => {
+const Profile = ({ profilePage, dispatch }) => {
 
   return (
     <>
@@ -25,9 +25,8 @@ const Profile = ({ profilePage, addPost, updateNewPostText }) => {
           </div>
           <Posts
             profilePage={profilePage}
-            addPost={addPost}
             newPostText={profilePage.newPostText}
-            updateNewPostText={updateNewPostText}
+            dispatch={dispatch}
           />
         </div>
       </div>

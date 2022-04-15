@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
 
-const App = ({ state, addPost, updateNewPostText }) => {
+const App = ({ state, dispatch }) => {
   return (
     <section className='wrapper'>
       <div className='container'>
@@ -15,8 +15,7 @@ const App = ({ state, addPost, updateNewPostText }) => {
         <Content
           profilePage={state.profilePage}
           dialogsPage={state.dialogsPage}
-          addPost={addPost}
-          updateNewPostText={updateNewPostText}
+          dispatch={dispatch}
         />
         {/* <Footer /> */}
       </div>

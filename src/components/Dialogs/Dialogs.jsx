@@ -1,15 +1,22 @@
 import React from 'react';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import {
+  updateNewMessageBodyCreator,
+  sendMessageCreator
+} from '../../redux/dialogs-reducer';
 
-const Dialogs = ({ dialogsPage }) => {
+const Dialogs = ({ dialogsPage, dispatch }) => {
 
-  // let newPostElement = React.createRef();
+  let onSendMessageClick = () => {
+    dispatch(sendMessageCreator());
+  };
 
-  // let addPost = () => {
-  //   let text = newPostElement.current.value;
-  //   alert(text);
-  // }
+
+  let onNewMessageChange = (e) => {
+   let body = e.target.value;
+   dispatch( updateNewMessageBodyCreator(body));
+  }
 
   return (
     <div className="content">
@@ -28,12 +35,18 @@ const Dialogs = ({ dialogsPage }) => {
           />
           )}
 
-          <textarea  name="story"
-            rows="5" cols="20">
-            It was a dark and stormy night...
-          </textarea>
+          <div className="dialogs__input">
+            <form>
+              <textarea
+                className="posts__input"
+                onChange={onNewMessageChange}
+                value={dialogsPage.newMessageBody}
+              />
+            </form>
+          </div>
           <button
             className="dialogs__button"
+            onClick={onSendMessageClick}
           >
             Send
           </button>

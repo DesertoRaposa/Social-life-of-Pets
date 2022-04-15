@@ -1,3 +1,7 @@
+import dialogsReducer from "./dialogs-reducer";
+import profileReducer from "./profile-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -86,6 +90,7 @@ let store = {
           message: 'I have been good. I am walking right now.',
         }
       ],
+      newMessageBody: ''
     },
     sitebar: {
 
@@ -94,37 +99,18 @@ let store = {
   _callSubscriber() {
     console.log('State was changed');
   },
-
-
   getState() {
     return this._state;
   },
   subscribe(observer) {
     this._callSubscriber = observer;
   },
+  dispatch(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
-
-  addPost() {
-
-  },
-  updateNewPostText(newText) {
-
-  },
-  dispatch(action) { 
-    if (action.type === 'ADD-POST') {
-      let newPost = {
-        id: 9,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0
-      }
-      this._state.profilePage.postsData.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    }
+    this._callSubscriber(this._state);
   }
 };
 
