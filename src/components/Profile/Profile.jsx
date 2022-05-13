@@ -1,16 +1,15 @@
 import React from 'react';
-import Posts from './Posts/Posts';
+import PostsContainer from './Posts/PostsContainer';
 import ProfileInfo from './ProfileInfo';
 
-const Profile = ({ profilePage, dispatch }) => {
-
+const Profile = ({ profileinfo, store }) => {
   return (
     <>
       <div className='content'>
         <div className='content__image' />
         <div className="content__wrapper">
           <div className="profile">
-            {profilePage.profileData.map((data) =>
+            {profileinfo.map((data) =>
               <ProfileInfo
                 name={data.name}
                 breed={data.breed}
@@ -23,15 +22,11 @@ const Profile = ({ profilePage, dispatch }) => {
             )
             }
           </div>
-          <Posts
-            profilePage={profilePage}
-            newPostText={profilePage.newPostText}
-            dispatch={dispatch}
-          />
+          <PostsContainer store={store} />
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Profile;

@@ -1,8 +1,7 @@
 import React from 'react';
-import home from '../../img/home.png'
-import rabbit from '../../img/rabbit.png'
-import { NavLink } from 'react-router-dom'
-
+import home from '../../img/home.png';
+import rabbit from '../../img/rabbit.png';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -62,7 +61,7 @@ const Navbar = () => {
         </div>
       </nav>
     </section>
-  )
-}
+  );
+};
 
 export default Navbar;

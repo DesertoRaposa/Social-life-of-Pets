@@ -2,7 +2,7 @@ import React from 'react';
 import m from '../../../img/m.jpg';
 import like from '../../../img/like.png';
 
-const Post = ({message,likesCount}) => {
+const Post = ({ message, likesCount }) => {
   return (
     <div className="posts__wrapper">
       <div className="posts__item">
@@ -36,8 +36,8 @@ const Post = ({message,likesCount}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Post;
 

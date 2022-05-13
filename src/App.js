@@ -6,21 +6,17 @@ import Footer from './components/Footer/Footer';
 import Content from './components/Content/Content';
 
 
-const App = ({ state, dispatch }) => {
+const App = ({ state, store }) => {
   return (
     <section className='wrapper'>
       <div className='container'>
         <Header />
         <Navbar />
-        <Content
-          profilePage={state.profilePage}
-          dialogsPage={state.dialogsPage}
-          dispatch={dispatch}
-        />
+        <Content store={store}/>
         {/* <Footer /> */}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default App;

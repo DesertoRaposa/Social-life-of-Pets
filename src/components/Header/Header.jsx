@@ -1,6 +1,5 @@
 import React from 'react';
-import rabbit from '../../img/rabbit.png'
-
+import rabbit from '../../img/rabbit.png';
 
 const Header = () => {
   return (
@@ -12,7 +11,7 @@ const Header = () => {
       />
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Header;

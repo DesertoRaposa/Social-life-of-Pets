@@ -1,12 +1,12 @@
 import React from 'react';
-import Profile from '../Profile/Profile';
 import {
   Routes,
   Route
 } from "react-router-dom";
-import Dialogs from '../Dialogs/Dialogs';
+import ProfileContainer from '../Profile/ProfileContainer';
+import DialogsContainer from '../Dialogs/DialogsContainer';
 
-const Content = ({ profilePage, dialogsPage, dispatch }) => {
+const Content = ({ store, profilePage }) => {
   return (
     <Routes>
       <Route
@@ -15,22 +15,21 @@ const Content = ({ profilePage, dialogsPage, dispatch }) => {
       <Route
         path="/profile"
         element={
-          <Profile
+          <ProfileContainer
             profilePage={profilePage}
-            dispatch={dispatch}
-            newPostText={profilePage.newPostText}
+            store={store}
           />}
       />
       <Route
         exact path="/dialogs/*"
-        element={<Dialogs
-          dialogsPage={dialogsPage}
-          dispatch={dispatch}
-        />
+        element={
+          <DialogsContainer 
+            store={store} 
+          />
         }
       />
     </Routes>
-  )
-}
+  );
+};
 
 export default Content;
