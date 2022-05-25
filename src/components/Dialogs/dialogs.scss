@@ -32,16 +32,14 @@
 
   &__names {
     padding: 40px;
-    background-color: bisque;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    background-color:$posts-light-bg;
+    background-color:$background-lighter;
   }
 
   &__messages {
     padding: 40px;
-    background-color: burlywood;
     display: flex;
     flex-direction: column;
     row-gap: 40px;

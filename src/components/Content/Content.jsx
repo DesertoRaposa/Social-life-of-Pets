@@ -5,15 +5,14 @@ import {
 } from "react-router-dom";
 import ProfileContainer from '../Profile/ProfileContainer';
 import DialogsContainer from '../Dialogs/DialogsContainer';
+import Users from '../Users/Users';
+import UsersContainer from '../Users/UsersContainer';
 
 const Content = ({ store, profilePage }) => {
   return (
     <Routes>
       <Route
         path="/"
-      />
-      <Route
-        path="/profile"
         element={
           <ProfileContainer
             profilePage={profilePage}
@@ -23,9 +22,15 @@ const Content = ({ store, profilePage }) => {
       <Route
         exact path="/dialogs/*"
         element={
-          <DialogsContainer 
-            store={store} 
+          <DialogsContainer
+            store={store}
           />
+        }
+      />
+      <Route
+        exact path="/users/*"
+        element={
+          <UsersContainer/>
         }
       />
     </Routes>

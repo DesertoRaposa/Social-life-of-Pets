@@ -9,15 +9,24 @@ const Profile = ({ profileinfo, store }) => {
         <div className='content__image' />
         <div className="content__wrapper">
           <div className="profile">
-            {profileinfo.map((data) =>
+            {profileinfo.map(({
+              birth,
+              name,
+              breed,
+              city,
+              postsquality,
+              followers,
+              following
+            }) =>
               <ProfileInfo
-                name={data.name}
-                breed={data.breed}
-                birth={data.birth}
-                city={data.city}
-                postsquality={data.postsquality}
-                followers={data.followers}
-                following={data.following}
+                key={birth}
+                name={name}
+                breed={breed}
+                birth={birth}
+                city={city}
+                postsquality={postsquality}
+                followers={followers}
+                following={following}
               />
             )
             }

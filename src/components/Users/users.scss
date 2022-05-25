@@ -1,0 +1,43 @@
+.users {
+  max-width: 700px;
+  background-color: rgb(152, 174, 193);
+  height: 100vh;
+  margin: 40px;
+ 
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows:1fr 40px 1fr;
+    align-items: center;
+  }
+
+  &__img {
+    grid-row-start: 2;
+    img {
+      vertical-align: middle;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    grid-column-start: 2;
+    margin: 0;
+    padding: 0;
+
+    &--nick {
+      color: $dark-text;
+    }
+  }
+
+  &__button {
+    max-width: 80px;
+    border: 1px solid $button-color;
+    border-radius: 40px;
+    text-align: center;
+    padding: 15px;
+    color: $light-text;
+  }
+}
+

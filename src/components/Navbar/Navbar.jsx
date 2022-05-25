@@ -19,10 +19,11 @@ const Navbar = () => {
             src={home}
             alt="logo"
           />
-          <NavLink to="/profile" activeclassname="active">
+          <NavLink to="/" activeclassname="active">
             Profile
           </NavLink>
         </div>
+
         <div className="navigation__item">
           <img
             src={home}
@@ -30,6 +31,15 @@ const Navbar = () => {
           />
           <NavLink to="/dialogs" activeclassname="active">
             Messages
+          </NavLink>
+        </div>
+        <div className="navigation__item">
+          <img
+            src={home}
+            alt="logo"
+          />
+          <NavLink to="/users" activeclassname="active">
+            Find users
           </NavLink>
         </div>
         <div className="navigation__item">

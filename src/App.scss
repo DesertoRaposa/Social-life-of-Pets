@@ -6,6 +6,8 @@ $bp-tablet: 768px;
 $bp-base: 1000px;
 $bp-desktop: 1280px;
 $background-dark: #262D37;
+$button-color: #1a8cd8;
+$background-lighter:#303741;
 
 .wrapper {
   max-width: 1600px;
@@ -17,7 +19,7 @@ $background-dark: #262D37;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 1fr;
   max-width: 1600px;
-  height: 900px;
+  height: 100%;
 
   @media (min-width: $bp-tablet) {
     grid-template-columns: 2fr 10fr;
@@ -67,3 +69,4 @@ a {
 @import './components/Header/header.scss';
 @import './components/Content/content.scss';
 @import './components/Dialogs/dialogs.scss';
+@import './components/Users/users.scss';

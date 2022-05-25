@@ -16,7 +16,7 @@ const Dialogs = ({
         <DialogItem
           id={id}
           name={name}
-          key={name}
+          key={id}
         />
         )}
       </div>
@@ -24,7 +24,7 @@ const Dialogs = ({
         {messages.map(({id, message}) => <Message
           message={message}
           id={id}
-          key={message}
+          key={id}
         />
         )}
 

@@ -15,26 +15,10 @@ let initialState = {
     },
   ],
   postsData: [
-    {
-      id: '1',
-      message: 'hi there',
-      likesCount: '29'
-    },
-    {
-      id: '2',
-      message: 'how are u dog?',
-      likesCount: '59'
-    },
-    {
-      id: '3',
-      message: 'Have a nice walk!',
-      likesCount: '98'
-    },
-    {
-      id: '4',
-      message: 'Live my best life!',
-      likesCount: '19'
-    }
+    { id: '1', message: 'hi there', likesCount: '29' },
+    { id: '2', message: 'how are u dog?', likesCount: '59' },
+    { id: '3', message: 'Have a nice walk!', likesCount: '98' },
+    { id: '4', message: 'Live my best life!', likesCount: '19' }
   ],
 };
 
@@ -47,17 +31,17 @@ const profileReducer = (state = initialState, action) => {
         likesCount: 0
       };
 
-      let stateCopy = {...state };
-      stateCopy.postsData = [...state.postsData];
-      stateCopy.postsData.push(newPost);
-      stateCopy.newPostText = '';
-      return stateCopy;
+      return {
+        ...state,
+        postsData: [...state.postsData, newPost],
+        newPostText: ''
+      };
     }
     case UPDATE_NEW_POST_TEXT: {
-      let stateCopy = {...state };
-
-      stateCopy.newPostText = action.newText;
-      return stateCopy;
+      return {
+        ...state,
+        newPostText: action.newText
+      };
     }
     default:
       return state;
