@@ -7,8 +7,8 @@
   padding: 20px 20px 0 20px;
 
   @media (min-width: $bp-tablet) {
-    max-width: 400px;
-    grid-area: p;
+    max-width: 300px;
+    // grid-area: p;
     border-radius: 10px;
     max-height: 530px;
   }
@@ -36,14 +36,31 @@
   }
 
   &__info {
-    max-width: 500px;
+  
+    max-width: 260px;
     width: 100%;
     text-align: center;
+
+    @media (min-width: $bp-mobileplus) {
+    }
+    @media (min-width: $bp-tablet) {
+      max-width: 500px;
+    }
+    @media (min-width: $bp-base) {
+    }
+    @media (min-width: $bp-desktop) {
+    }
+
   }
   &__name {
-    font-size: 26px;
+    font-size: 24px;
     margin: 10px;
     color: $light-text;
+
+    @media (min-width: $bp-tablet) {
+      font-size: 26px;
+    }
+  
   }
   &__city {
     color: $light-text;
@@ -88,6 +105,7 @@
   &__name {
     color: $dark-text;
     margin: 0;
+    
   }
   &__quality {
     text-align: center;

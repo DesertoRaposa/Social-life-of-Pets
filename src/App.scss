@@ -1,13 +1,15 @@
 $light-text: #f3ebeb;
 $dark-text:#979a9f;
-$posts-light-bg: #484c55;
 $bp-mobile: 320px;
+$bp-mobileplus: 500px;
 $bp-tablet: 768px;
 $bp-base: 1000px;
 $bp-desktop: 1280px;
-$background-dark: #262D37;
 $button-color: #1a8cd8;
-$background-lighter:#303741;
+
+$background-lighter: #303741;
+$background-dark: #262D37;
+$posts-light-bg: #484c55;
 
 .wrapper {
   max-width: 1600px;
@@ -20,15 +22,18 @@ $background-lighter:#303741;
   grid-template-columns: 1fr;
   max-width: 1600px;
   height: 100%;
+  background-color: $background-lighter;
+  
 
   @media (min-width: $bp-tablet) {
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 4fr 10fr;
     grid-template-areas: 
     "n h"
     "n c";
   }
 
   @media (min-width: $bp-base) {
+    grid-template-columns: 2fr 10fr;
 
   }
   @media (min-width: $bp-desktop) {
@@ -43,18 +48,21 @@ a {
 
  textarea {
   padding: 15px;
-  width: 360px;
+  width: 230px;
   height: 44px;
   border-radius: 15px;
   border-style: none;
   background: rgba(241, 240, 240, 0.966);
   outline:none;
-  margin: 20px; 
+  margin: 5px;
+
 
   @media (min-width: $bp-tablet) {
-    width: 550px;
+    width: 360px;
+    width: 410px;
     height: 64px;
     padding: 20px;
+      margin: 20px; 
   }
 
   @media (min-width: $bp-base) {

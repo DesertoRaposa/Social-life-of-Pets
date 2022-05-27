@@ -1,33 +1,67 @@
 .users {
   max-width: 700px;
-  background-color: rgb(152, 174, 193);
   height: 100vh;
   margin: 40px;
  
 
   &__wrapper {
     display: grid;
-    grid-template-rows:1fr 40px 1fr;
+    grid-template-rows:1fr;
     align-items: center;
+    row-gap: 20px;
+
+    @media (min-width: $bp-mobileplus) {
+      grid-template-rows:1fr 40px 1fr;
+    }
   }
 
-  &__img {
-    grid-row-start: 2;
+  &__img { 
+    grid-row-start: 1;
+
     img {
       vertical-align: middle;
       width: 80px;
       height: 80px;
       border-radius: 50%;
     }
+
+    @media (min-width: $bp-mobileplus) {
+      grid-row-start: 2;
+    }
+    
   }
 
   &__text {
-    grid-column-start: 2;
+    grid-column-start: 1;
     margin: 0;
     padding: 0;
 
     &--nick {
       color: $dark-text;
+    }
+
+    @media (min-width: $bp-mobileplus) {
+      grid-column-start: 2;
+    }
+
+    @media (min-width: $bp-base) {
+      
+    }
+
+    @media (min-width: $bp-desktop) {
+    
+    }
+  }
+
+  &__location {
+    margin: 16px 0;
+
+    @media (min-width: $bp-mobileplus) {
+      margin: 0 0 20px 0;
+    }
+
+    @media (min-width: $bp-tablet) {
+  
     }
   }
 
@@ -38,6 +72,12 @@
     text-align: center;
     padding: 15px;
     color: $light-text;
+    cursor: pointer;
+
+    &:hover {
+      transition-duration: 0.2s;
+      background-color: #1a8cd8;
+    }
   }
 }
 

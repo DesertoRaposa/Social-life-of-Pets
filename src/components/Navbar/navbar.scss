@@ -1,6 +1,6 @@
 .nav {
-  background-color: #3C424B;
-  box-shadow: rgb(0 0 0 / 22%) 0px 14px 28px;
+  background-color: $background-lighter;
+  // box-shadow: rgb(0 0 0 / 22%) 0px 14px 28px;
 
 
   @media (min-width: $bp-tablet) {
@@ -29,20 +29,28 @@
 }
 
 .navigation {
-  padding: 20px;
-  background-color: #3C424B;
+
+  padding: 40px;
+  background-color: $background-lighter;
 
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 20px;
+  row-gap: 15px;
   max-width: 320px;
 
+  @media (min-width: $bp-mobileplus) {
+
+  }
+
   @media (min-width: $bp-tablet) {
-    padding: 160px 30px 0 20px;
+
+    padding: 160px 30px 30px 20px;
     grid-area: n;
     max-width: 100%;
     row-gap: 30px;
   }
+
+
 
   @media (min-width: $bp-base) {
   }
@@ -57,12 +65,20 @@
     display: grid;
     grid-template-columns: 40px 1fr;
     align-items: center;
-    justify-self: center;
-    max-width: 80px;
+    max-width: 120px;
+
+    @media (min-width: $bp-mobileplus) {
+    }
 
     @media (min-width: $bp-tablet) {
       justify-self: unset;
       max-width: 100%;
+    
+    }
+
+    @media (min-width: $bp-base) {
+    }
+    @media (min-width: $bp-desktop) {
     }
 
     a.active {
