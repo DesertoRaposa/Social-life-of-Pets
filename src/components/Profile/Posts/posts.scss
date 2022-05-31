@@ -6,7 +6,9 @@
   grid-template-columns: 1fr;
   justify-items: center;
   row-gap: 15px;
-
+  border-radius: 10px;
+  width: 100%;
+  
   @media (min-width: $bp-tablet) {
     justify-items: unset;
     margin-top: 0;
@@ -15,8 +17,12 @@
     width: 100%;
   }
 
+  @media (min-width: $bp-base) {
+    max-width: 697px;
+    width: 100%;
+  }
+
   &__button {
- 
     border-radius: 40px;
     outline: none;
     padding: 15px 50px;
@@ -33,7 +39,6 @@
       margin: 0 0 20px 20px;
     }
   
-
     &:hover {
       transition-duration: 0.2s;
       background-color: rgba(26, 140, 216);
@@ -44,7 +49,6 @@
     max-width: 240px;
     width: 100%;
     display: grid;
-
     justify-items: center;
 
     @media (min-width: $bp-tablet) {
@@ -55,13 +59,11 @@
     }
 
     @media (min-width: $bp-base) {
-      margin-bottom:0x;
+      margin-bottom: 0x;
     }
     @media (min-width: $bp-desktop) {
+      max-width: 500px;
     }
-
-
-
   }
 
   &__title {
@@ -83,7 +85,10 @@
       margin-bottom: 20px;
       font-size: 18px;
     }
-
+    
+    @media (min-width: $bp-base) {
+      max-width: 697px;
+    }
   }
 
   &__item {
@@ -97,43 +102,43 @@
     width: 100%;
     max-width: 230px;
 
-    @media (min-width: $bp-mobileplus) {
-    }
     @media (min-width: $bp-tablet) {
       padding: 20px;
-      max-width: 500px;
+      max-width: 281px;
     }
+
     @media (min-width: $bp-base) {
+      max-width: 360px;
     }
+
     @media (min-width: $bp-desktop) {
+      max-width: 500px;
     }
 
     &--user {
+      width: auto;
+      max-width: inherit;
       background-color: $background-lighter;
       color: $light-text;
       grid-template-columns: 1fr;
 
       @media (min-width: $bp-tablet) {
-        
+        grid-template-columns: 225px 1fr 1fr;
+        max-width: 440px;
       }
 
       @media (min-width: $bp-base) {
         grid-template-columns:  280px 1fr 1fr;
-      }
-
-      @media (min-width: $bp-desktop) {
-      
+        max-width: 580px;
       }
     }
   }
 
   &__img {
-
     img {
       width: 50px;
       border-radius: 50px;
     }
-
   }
 
   &__text {
@@ -143,9 +148,8 @@
 
     @media (min-width: $bp-tablet) {
       padding-left: 20px;
-       font-size: 16px;
+      font-size: 16px;
     }
-  
   }
 
   &__like {
@@ -160,7 +164,6 @@
       @media (min-width: $bp-tablet) {
         width: 20px;
       }
-    
     }
 
     span {

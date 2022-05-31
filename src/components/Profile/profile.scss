@@ -5,53 +5,45 @@
   column-gap: 30px;
   background-color: $background-lighter;
   padding: 20px 20px 0 20px;
+  height: 540px;
+  border-radius: 10px;
 
   @media (min-width: $bp-tablet) {
+    width: 100%;
     max-width: 300px;
-    // grid-area: p;
-    border-radius: 10px;
-    max-height: 530px;
   }
 
   @media (min-width: $bp-base) {
+    max-width: 250px;
   }
+
   @media (min-width: $bp-desktop) {
+    max-width: 350px;
   }
-
-
 
   &__avatar {
     text-align: center;
 
     img {
-
       width: 200px;
       border-radius: 50%;
 
       @media (min-width: $bp-tablet) {
         width: 250px;
       }
-  
     }
   }
 
   &__info {
-  
     max-width: 260px;
     width: 100%;
     text-align: center;
 
-    @media (min-width: $bp-mobileplus) {
-    }
     @media (min-width: $bp-tablet) {
       max-width: 500px;
     }
-    @media (min-width: $bp-base) {
-    }
-    @media (min-width: $bp-desktop) {
-    }
-
   }
+
   &__name {
     font-size: 24px;
     margin: 10px;
@@ -60,8 +52,8 @@
     @media (min-width: $bp-tablet) {
       font-size: 26px;
     }
-  
   }
+
   &__city {
     color: $light-text;
     display: flex;
@@ -70,17 +62,18 @@
     column-gap: 10px;
     margin: 20px;
 
-    img{
+    img {
       width: 20px;
     }
   }
+
   &__birth {
     margin: 10px;
     color: $light-text;
   }
+
   &__breed {
     margin: 10px;
-    // color: $light-text;
     color: $dark-text;
   }
 }
@@ -105,8 +98,8 @@
   &__name {
     color: $dark-text;
     margin: 0;
-    
   }
+  
   &__quality {
     text-align: center;
     color: $light-text;

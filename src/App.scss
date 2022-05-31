@@ -11,9 +11,15 @@ $background-lighter: #303741;
 $background-dark: #262D37;
 $posts-light-bg: #484c55;
 
+body {
+  background-color: $background-lighter;
+  height:100%
+}
+
 .wrapper {
-  max-width: 1600px;
-  margin: auto;
+  max-width: 3840px;
+  width: 100%;
+  background-color: $background-lighter;
 }
 
 .container {
@@ -21,10 +27,8 @@ $posts-light-bg: #484c55;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 1fr;
   max-width: 1600px;
-  height: 100%;
   background-color: $background-lighter;
   
-
   @media (min-width: $bp-tablet) {
     grid-template-columns: 4fr 10fr;
     grid-template-areas: 
@@ -36,9 +40,6 @@ $posts-light-bg: #484c55;
     grid-template-columns: 2fr 10fr;
 
   }
-  @media (min-width: $bp-desktop) {
-  }
-
 }
 
 a {
@@ -49,25 +50,20 @@ a {
  textarea {
   padding: 15px;
   width: 230px;
-  height: 44px;
   border-radius: 15px;
   border-style: none;
   background: rgba(241, 240, 240, 0.966);
   outline:none;
   margin: 5px;
 
-
   @media (min-width: $bp-tablet) {
-    width: 360px;
-    width: 410px;
-    height: 64px;
+    width: 280px;
     padding: 20px;
       margin: 20px; 
   }
 
   @media (min-width: $bp-base) {
-  }
-  @media (min-width: $bp-desktop) {
+    width: 360px;
   }
 }
 

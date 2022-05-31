@@ -8,14 +8,16 @@ import Content from './components/Content/Content';
 
 const App = ({ state, store }) => {
   return (
-    <section className='wrapper'>
-      <div className='container'>
-        <Header />
-        <Navbar />
-        <Content store={store}/>
-        {/* <Footer /> */}
-      </div>
-    </section>
+    <div className='mainbg'>
+      <section className='wrapper'>
+        <div className='container'>
+          <Header />
+          <Navbar />
+          <Content store={store} />
+          {/* <Footer /> */}
+        </div>
+      </section>
+    </div>
   );
 };
 
