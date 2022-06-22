@@ -30,7 +30,7 @@ const Dialogs = ({
 
         <div className="dialogs__input">
           <form>
-            <textarea
+            <input
               className="posts__input"
               onChange={(e) => onNewMessageChange(e.target.value)}
               value={newMessageBody}

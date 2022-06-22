@@ -47,7 +47,7 @@ a {
   color: $light-text;
 }
 
- textarea {
+input {
   padding: 15px;
   width: 230px;
   border-radius: 15px;
@@ -59,11 +59,11 @@ a {
   @media (min-width: $bp-tablet) {
     width: 280px;
     padding: 20px;
-      margin: 20px; 
+    margin: 20px; 
   }
 
   @media (min-width: $bp-base) {
-    width: 360px;
+    width: 500px;
   }
 }
 

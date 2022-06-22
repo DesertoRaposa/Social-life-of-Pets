@@ -22,7 +22,7 @@ const Posts = ({
     }
     <div className="posts__input">
       <form>
-        <textarea
+        <input
           className="posts__input"
           onChange={(e) => onPostChange(e.target.value)}
           value={newPostText}
