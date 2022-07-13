@@ -5,7 +5,6 @@ import {
 } from "react-router-dom";
 import ProfileContainer from '../Profile/ProfileContainer';
 import DialogsContainer from '../Dialogs/DialogsContainer';
-import Users from '../Users/Users';
 import UsersContainer from '../Users/UsersContainer';
 
 const Content = ({ store, profilePage }) => {
@@ -30,7 +29,9 @@ const Content = ({ store, profilePage }) => {
       <Route
         exact path="/users/*"
         element={
-          <UsersContainer/>
+          <UsersContainer
+            store={store}
+          />
         }
       />
     </Routes>
