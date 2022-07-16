@@ -13,14 +13,14 @@ const Users = ({
 
   useEffect(() => {
     if (users.length === 0) {
-      axious.get("https://social-network.samuraijs.com/api/1.0/users")
+      axious.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`)
         .then(response => {
           setUsers(response.data.items)
         })
     }
   }, []);
 
-  let pagesCount = totalUsersCount / pageSize;
+  let pagesCount = Math.ceil(totalUsersCount / pageSize);
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
@@ -30,7 +30,7 @@ const Users = ({
     <div>
       {
         pages.map((p => (
-          <span className={currentPage === p && 'selected'}>
+          <span className={currentPage === p ? 'selected' : ""}>
             {p}
           </span>
         ))
