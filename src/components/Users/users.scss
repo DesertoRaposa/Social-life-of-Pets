@@ -104,13 +104,30 @@
   }
 }
 
-span {
+button {
   cursor: pointer;
   padding: 15px;
   color: rgba(255, 255, 255, 0.841);
+  border: none;
+  background-color: unset;
+  font-size: 16px;
+
+  &:hover {
+    transition-duration: 0.2s;
+    background-color: #3C424B;
+  }
 }
 
 .selected {
   font-weight: bold;
   color: #1a8cd8;
 }
+
+//pag 
+
+.pagination {
+  padding-top: 20px;
+  justify-content: center;
+  display: flex;
+}
+

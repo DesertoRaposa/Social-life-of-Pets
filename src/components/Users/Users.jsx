@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import * as axious from 'axios';
+import Pagination from '../Pagination/Pagination';
 
 const Users = ({
   users,
@@ -8,7 +9,9 @@ const Users = ({
   setUsers,
   totalUsersCount,
   pageSize,
-  currentPage
+  currentPage,
+  setCurrentPage,
+  setUsersTotalCountAC
 }) => {
 
   useEffect(() => {
@@ -16,27 +19,45 @@ const Users = ({
       axious.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${pageSize}`)
         .then(response => {
           setUsers(response.data.items)
+          setUsersTotalCountAC(response.data.totalCount)
         })
     }
   }, []);
 
+  const onPageChanged = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    axious.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${pageSize}`)
+      .then(response => {
+        setUsers(response.data.items)
+      });
+  };
+
   let pagesCount = Math.ceil(totalUsersCount / pageSize);
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
+
+    if (pages.length < 15) {
+      pages.push(i);
+    }
   }
 
   return <div className='content'>
-    <div>
+    {
+      <div className='pagination'>
       {
         pages.map((p => (
-          <span className={currentPage === p ? 'selected' : ""}>
+          <button
+            key={p}
+            className={currentPage === p ? 'selected' : ""}
+            onClick={(e) => { (onPageChanged(p)) }}
+          >
             {p}
-          </span>
+          </button >
         ))
         )
       }
     </div>
+    }
     {
       users.map(({ id, photos, name, status, uniqueUrlName, followed }) =>
         <div className='users' key={id}>
